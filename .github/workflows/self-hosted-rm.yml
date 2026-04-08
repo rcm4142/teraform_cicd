@@ -1,17 +1,10 @@
-name: CI Pipeline on Self-Hosted Runner
+name: Test Self-Hosted Runner
 
-on:
-  workflow_dispatch:  # Manual trigger
+on: [push]
 
 jobs:
-  build:
-    runs-on: [self-hosted, amazonlinux, dev]  # Matches labels of self-hosted runner
+  test:
+    runs-on: self-hosted
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Build
-        run: echo "Building on self-hosted runner"
-
-      - name: Test
-        run: echo "Testing on self-hosted runner"
+      - name: Print message
+        run: echo "Hello from self-hosted runner!"
