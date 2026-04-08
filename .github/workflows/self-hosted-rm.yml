@@ -1,8 +1,8 @@
 name: CI Pipeline on Self-Hosted Runner
 
 on:
-  workflow_dispatch:  # Manual trigger
-
+  #workflow_dispatch:  # Manual trigger
+  [push]
 jobs:
   build:
     runs-on: [self-hosted, amazonlinux, dev]  # Matches labels of self-hosted runner
